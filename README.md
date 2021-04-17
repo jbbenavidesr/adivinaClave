@@ -27,6 +27,8 @@ Intenta: 6371
 
 Muy bien, has adivinado la clave en 8 intentos.
 
-Quieres jugar de nuevo?
+Quieres jugar de nuevo? N
+
+Hasta luego!
 ```
 
