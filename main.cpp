@@ -18,15 +18,25 @@ int main(void)
 
     for (int i = 0; i < numero_de_digitos; i++)
     {
-        digits[i] = rand() % 10;
+        int digito;
+        do
+        {
+            digito = rand() % 10;
+        } while (/* condition */);
+        digits[i] = ;
     }
+    for (int i = 0; i < numero_de_digitos; i++)
+    {
+        cout << digits[i];
+    }
+    cout << endl;
 
     // Pedir al usuario que adivine
-    char intento[numero_de_digitos];
+    int intento[numero_de_digitos];
     cout << "Adivina: ";
     for (int i = 0; i < numero_de_digitos; i++)
     {
-        intento[i] = cin.get();
+        intento[i] = cin.get() - '0';
     }
 
     for (int i = 0; i < numero_de_digitos; i++)
@@ -34,6 +44,28 @@ int main(void)
         cout << intento[i];
     }
     cout << endl;
+
+    // Comparar
+    int digitos_bien = 0, posiciones_bien = 0;
+    for (int i=0; i<numero_de_digitos; i++)
+    {
+        // el intento[i] esta en algun lado de digitos?
+        for(int j=0; j<numero_de_digitos; j++)
+        {
+            if(intento[i] == digits[j])
+            {
+                digitos_bien += 1;
+
+                // el intento[i] esta donde toca?
+                if (i == j)
+                {
+                    posiciones_bien += 1;
+                }
+            }
+        }
+    }
+    cout << "Tienes " << digitos_bien << " digitos bien y " << posiciones_bien << " en la posicion correcta." << endl;
+
     return 0;
 }
 
